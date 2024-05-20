@@ -11,7 +11,7 @@ function App() {
 
   function getData() {
     axios
-      .get('https://picsum.photos/v2/list?limit=4')
+      .get('https://picsum.photos/v2/list?limit=10')
       .then((response) => {
         console.log(response.data);
         setImageList(response.data);
