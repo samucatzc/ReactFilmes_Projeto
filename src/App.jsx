@@ -2,12 +2,11 @@ import { useEffect, useState } from 'react'
 import Paragraph from './components/Paragraph'
 import Image from './components/Image'
 import axios from 'axios';
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import Detalhes from './routes/Detalhes';
 
 function App() {
   const [imageList, setImageList] = useState([])
-
-  useEffect(() => {
-  }, [])
 
   function getData() {
     axios
@@ -23,17 +22,34 @@ function App() {
   if (!imageList) return <p>Carregando...</p>
 
   return (
-    <div style={{display: 'flex', justifyContent: 'center', width: '100%', flexDirection: 'column'}}>
-      {imageList.map((image) => {
-      return (
-        <div key={image.id}>
-          <Paragraph tamanho='30px'>Name: {image.author}</Paragraph>
-          <Image width='200px' height='200px' url={image.download_url} />
-        </div>
-      );
-      })}
-    </div>
+    <Router>
+      <Routes>
+        <Route
+          path='/detalhes/:id'
+          element={<Detalhes />}
+        />
+        <Route path='/users' element={<div>Página de usuários</div>}></Route>
+        <Route path='/' element={<ImageList imageList={imageList} />}></Route>
+      </Routes>
+    </Router>
   );
+}
+
+function ImageList(props) {
+    return (
+      <div style={{display: 'flex', justifyContent: 'center', width: '100%', flexDirection: 'column'}}>
+        {props.imageList.map((image) => {
+        return (
+          <div key={image.id}>
+            <Paragraph tamanho='30px'>Name: {image.author}</Paragraph>
+            <Link to={`/detalhes/${image.id}`}>
+              <Image width='300px' height='300px' url={image.download_url} />
+            </Link>
+          </div>
+        );
+        })}
+      </div>
+    );
 }
 
 export default App
