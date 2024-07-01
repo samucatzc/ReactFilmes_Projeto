@@ -1,17 +1,17 @@
-import PropTypes from 'prop-types'
+import PropTypes from "prop-types";
 
-function Paragraph (props) {
-    return (
-      <p
-        style={{
-          color: props.cor,
-          fontSize: props.tamanho,
-          fontWeight: 'bold',
-        }}
-      >
-        {props.children}
-      </p>
-    );
+function Paragraph(props) {
+  return (
+    <p
+      style={{
+        color: props.cor,
+        fontSize: props.tamanho,
+        fontWeight: "bold",
+      }}
+    >
+      {props.children}
+    </p>
+  );
 }
 
 Paragraph.propTypes = {
@@ -20,4 +20,4 @@ Paragraph.propTypes = {
   cor: PropTypes.string,
 };
 
-export default Paragraph
+export default Paragraph;

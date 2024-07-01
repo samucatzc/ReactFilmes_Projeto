@@ -1,0 +1,66 @@
+.details-movie {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+}
+
+.logo {
+  color: white;
+}
+
+.title {
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: flex-start;
+  width: 75%;
+  padding-top: 100px;
+  align-items: center;
+}
+
+.title p {
+  color: #808080;
+  font-size: 40px;
+}
+
+.info-movie {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
+}
+
+.poster-details {
+  width: 500px;
+  height: 600px;
+  display: flex;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 500px;
+  width: 900px;
+  gap: 10px;
+}
+
+.other-movies {
+  display: flex;
+  flex-direction: column;
+  margin-top: 90px;
+}
+.related h2 {
+  margin-bottom: 300px;
+}
+.related-movies-list {
+  display: grid;
+  grid-template-columns: repeat(5, 0fr);
+  justify-content: center;
+  gap: 30px;
+}
+
+.related-movies-list img {
+  width: 300px;
+  height: 300px;
+}
